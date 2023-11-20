@@ -1,0 +1,2268 @@
+{
+	"info": {
+		"_postman_id": "9e5649a2-5a36-4e1b-866e-24d582f407f5",
+		"name": "CRM API",
+		"description": "# 🗣️ Get started here\n\nThis collection template is a blueprint demonstrating the core features of a CRM API. It supports managing accounts, contacts, opportunities, sales activities, and the relations between all of these entities.\n\n## 🔖 How to use this template?\n\n#### Step 1: Send the requests\n\nSend the requests and view the response returned by the mock API, or check out the examples included.\n\n#### **Step 2: Update the base URL**\n\nSelect the collection and navigate to the Variables tab. Update the `base_url` variable with your API's URL.\n\n#### **Step 3: Customize the requests**\n\nUpdate the different requests to suit your use case, including the request body, authorization, documentation, headers, tests, and path parameters.\n\n#### **Step 4: Continue building the collection**\n\nCreate requests in this collection to test the new API endpoints you develop.\n\n## ℹ️ Resources\n\n[Building requests](https://learning.postman.com/docs/sending-requests/requests/)  \n[Authorizing requests](https://learning.postman.com/docs/sending-requests/authorization/)  \n[Using variables](https://learning.postman.com/docs/sending-requests/variables/)  \n[Creating your first collection](https://learning.postman.com/docs/getting-started/creating-the-first-collection/)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Contacts",
+			"item": [
+				{
+					"name": "Contact",
+					"item": [
+						{
+							"name": "Retrieve a specific contact",
+							"id": "936bf317-87fe-4913-a81e-138bb77f73bb",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/contacts/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"contacts",
+										":id"
+									],
+									"variable": [
+										{
+											"id": "c26fc57b-64d9-4425-8cba-fdec56707e8e",
+											"key": "id",
+											"value": "abc123"
+										}
+									]
+								},
+								"description": "Get information about a contact."
+							},
+							"response": [
+								{
+									"id": "35d9b7ac-9c1c-4981-b9de-8a8270bd19dc",
+									"name": "Successful response",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/contacts/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"contacts",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "abc123"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"id\": \"abc123\",\n    \"name\": \"John Doe\",\n    \"email\": \"john.doe@example.com\",\n    \"phone\": \"000555555\",\n    \"account_id\": \"xyz789\",\n    \"opportunity_ids\": [\n        \"def456\"\n    ],\n    \"activity_ids\": [\n        \"hij321\"\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Update an existing contact",
+							"id": "19c6eddf-2e62-446a-a617-8a9e8a5b76e2",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"John Doe\",\n  \"email\": \"john.doe@example.com\",\n  \"phone\": \"000555555\",\n  \"account_id\": \"xyz789\",\n  \"opportunity_ids\": [\n    \"def456\"\n  ],\n  \"activity_ids\": [\n    \"hij321\"\n  ]\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/contacts/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"contacts",
+										":id"
+									],
+									"variable": [
+										{
+											"id": "e1deb3fc-7e98-4a63-a771-7b74eaa9b23f",
+											"key": "id",
+											"value": "abc123"
+										}
+									]
+								},
+								"description": "Update an existing contact's details."
+							},
+							"response": [
+								{
+									"id": "6b4eee84-4c9f-46ff-90fa-134d92f3ffac",
+									"name": "Contact updated successfully",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"John Doe\",\n  \"email\": \"john.doe@example.com\",\n  \"phone\": \"000555555\",\n  \"account_id\": \"xyz789\",\n  \"opportunity_ids\": [\n    \"def456\"\n  ],\n  \"activity_ids\": [\n    \"hij321\"\n  ]\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/contacts/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"contacts",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "abc123"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"id\": \"abc123\",\n    \"name\": \"John Doe\",\n    \"email\": \"john.doe@example.com\",\n    \"phone\": \"000555555\",\n    \"account_id\": \"xyz789\",\n    \"opportunity_ids\": [\n        \"def456\"\n    ],\n    \"activity_ids\": [\n        \"hij321\"\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Delete a contact",
+							"id": "810d22d9-8ad0-4b9d-94e0-012965002046",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/contacts/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"contacts",
+										":id"
+									],
+									"variable": [
+										{
+											"id": "cc0db79b-3146-430d-bf80-90002f78d372",
+											"key": "id",
+											"value": "abc123"
+										}
+									]
+								},
+								"description": "Delete an existing contact."
+							},
+							"response": [
+								{
+									"id": "aded15f4-4938-4425-81c5-767cef283eeb",
+									"name": "Contact deleted successfully",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/contacts/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"contacts",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": null
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"id\": \"abc123\",\n    \"name\": \"John Doe\"\n}"
+								}
+							]
+						}
+					],
+					"id": "1258f3f5-5ca1-4e7b-a249-33071c433b0e"
+				},
+				{
+					"name": "Retrieve a list of contacts",
+					"id": "9f2f4657-edfa-47ca-a06b-1652b79aaf1a",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": "{{baseUrl}}/contacts",
+						"description": "Retrieve a list of contacts, optionally filtered e.g. by associated account.\n\n[  \n](https://postman.postman.co/documentation/24034743-dda283f2-49f5-4754-b204-0c89a95e626c?entity=request-24034743-ce900596-9921-4cc0-ad9b-9939f391a07a&branch=&version=)"
+					},
+					"response": [
+						{
+							"id": "248a4036-b679-467e-b837-df4490dd703f",
+							"name": "List all contacts",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": "{{baseUrl}}/contacts"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "[\n    {\n        \"id\": \"abc123\",\n        \"name\": \"John Doe\",\n        \"email\": \"john.doe@example.com\",\n        \"phone\": \"000555555\",\n        \"account_id\": \"xyz789\",\n        \"opportunity_ids\": [\n            \"def456\"\n        ],\n        \"activity_ids\": [\n            \"hij321\"\n        ]\n    },\n    {\n        \"id\": \"abc123\",\n        \"name\": \"John Doe\",\n        \"email\": \"john.doe@example.com\",\n        \"phone\": \"000555555\",\n        \"account_id\": \"xyz789\",\n        \"opportunity_ids\": [\n            \"def456\"\n        ],\n        \"activity_ids\": [\n            \"hij321\"\n        ]\n    }\n]"
+						},
+						{
+							"id": "8c50c430-d992-42ac-9926-705c0f941e40",
+							"name": "Filter by account",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/contacts?accountId=xyz789",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"contacts"
+									],
+									"query": [
+										{
+											"key": "accountId",
+											"value": "xyz789"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "[\n    {\n        \"id\": \"abc123\",\n        \"name\": \"John Doe\",\n        \"email\": \"john.doe@example.com\",\n        \"phone\": \"000555555\",\n        \"account_id\": \"xyz789\",\n        \"opportunity_ids\": [\n            \"def456\"\n        ],\n        \"activity_ids\": [\n            \"hij321\"\n        ]\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Create a new contact",
+					"id": "1c19411f-ef55-45ff-b814-dfbdbce29991",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"John Doe\",\n  \"email\": \"john.doe@example.com\",\n  \"phone\": \"000555555\",\n  \"account_id\": \"xyz789\",\n  \"opportunity_ids\": [\n    \"def456\"\n  ],\n  \"activity_ids\": [\n    \"hij321\"\n  ]\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/contacts",
+						"description": "Create a new contact."
+					},
+					"response": [
+						{
+							"id": "bd83cd87-1b97-4270-9655-b13487b44834",
+							"name": "Contact created successfully",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"John Doe\",\n  \"email\": \"john.doe@example.com\",\n  \"account_id\": \"xyz789\",\n  \"opportunity_ids\": [\n    \"def456\"\n  ],\n  \"activity_ids\": [\n    \"hij321\"\n  ]\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/contacts"
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"id\": \"abc123\",\n    \"name\": \"John Doe\",\n    \"email\": \"john.doe@example.com\",\n    \"phone\": \"000555555\",\n    \"account_id\": \"xyz789\",\n    \"opportunity_ids\": [\n        \"def456\"\n    ],\n    \"activity_ids\": [\n        \"hij321\"\n    ]\n}"
+						}
+					]
+				}
+			],
+			"id": "1388407b-e347-4d53-b568-2025b109482d",
+			"description": "A contact is a connection to an account, typically an individual working within the business an account represents."
+		},
+		{
+			"name": "Leads",
+			"item": [
+				{
+					"name": "Lead",
+					"item": [
+						{
+							"name": "Retrieve a specific lead",
+							"id": "39f860be-4df2-4056-8de2-6cc8d29ab4ee",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/leads/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"leads",
+										":id"
+									],
+									"variable": [
+										{
+											"id": "67ef7432-e5ac-4b8c-b971-109f89ac8471",
+											"key": "id",
+											"value": "abc123"
+										}
+									]
+								},
+								"description": "Get information about a contact."
+							},
+							"response": [
+								{
+									"id": "ccf4fa8f-e1d8-4c03-93ac-040e066c7dbb",
+									"name": "Successful response",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/leads/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"leads",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "abc123"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"id\": \"klm654\",\n    \"name\": \"Bobby Tables\",\n    \"contact_info\": \"bobby.t@example.com\",\n    \"source\": \"PERSONAL\",\n    \"status\": \"UNQUALIFIED\",\n    \"notes\": \"Jen noted that Bobby's company may be interested in our services.\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Update an existing lead",
+							"id": "24be6bf7-f9b6-44fd-8c16-72bc8d4e116a",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Bobby Tables\",\n    \"contact_info\": \"bobby.t@example.com\",\n    \"source\": \"PERSONAL\",\n    \"status\": \"UNQUALIFIED\",\n    \"notes\": \"Jen noted that Bobby's company may be interested in our services, potential for a new account with Bobby Inc Ltd.\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/leads/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"leads",
+										":id"
+									],
+									"variable": [
+										{
+											"id": "09191482-1d68-48c3-b655-e93f44bed395",
+											"key": "id",
+											"value": "abc123"
+										}
+									]
+								},
+								"description": "Update an existing contact's details."
+							},
+							"response": [
+								{
+									"id": "12d6817b-2b59-4971-963a-5500349f6566",
+									"name": "Contact updated successfully",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"name\": \"Bobby Tables\",\n    \"contact_info\": \"bobby.t@example.com\",\n    \"source\": \"PERSONAL\",\n    \"status\": \"UNQUALIFIED\",\n    \"notes\": \"Jen noted that Bobby's company may be interested in our services, potential for a new account with Bobby Inc Ltd.\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/leads/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"leads",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "abc123"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"id\": \"klm654\",\n    \"name\": \"Bobby Tables\",\n    \"contact_info\": \"bobby.t@example.com\",\n    \"source\": \"PERSONAL\",\n    \"status\": \"UNQUALIFIED\",\n    \"notes\": \"Jen noted that Bobby's company may be interested in our services, potential for a new account with Bobby Inc Ltd.\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Delete a lead",
+							"id": "7f8f0c0b-f284-49fb-9217-61ddf6f835d5",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/leads/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"leads",
+										":id"
+									],
+									"variable": [
+										{
+											"id": "bc12cbea-6006-4162-b646-43fd9aec048b",
+											"key": "id",
+											"value": "abc123"
+										}
+									]
+								},
+								"description": "Delete an existing contact."
+							},
+							"response": [
+								{
+									"id": "5e6b79f1-838f-46c6-8912-a86669b97086",
+									"name": "Lead deleted successfully",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/leads/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"leads",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": null
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"id\": \"klm654\",\n    \"name\": \"Bobby Tables\"\n}"
+								}
+							]
+						}
+					],
+					"id": "ae06e803-a15a-4766-95b2-166a4b7463d6"
+				},
+				{
+					"name": "Retrieve a list of leads",
+					"id": "b0bacad9-7267-47e8-9711-f44fa1785881",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": "{{baseUrl}}/leads",
+						"description": "Retrieve a list of contacts, optionally filtered e.g. by associated account.\n\n[  \n](https://postman.postman.co/documentation/24034743-dda283f2-49f5-4754-b204-0c89a95e626c?entity=request-24034743-ce900596-9921-4cc0-ad9b-9939f391a07a&branch=&version=)"
+					},
+					"response": [
+						{
+							"id": "cdda7dde-ddd0-4a6c-85ad-9a28bcd9f1fe",
+							"name": "List all leads",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": "{{baseUrl}}/leads"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "[\n    {\n        \"id\": \"klm654\",\n        \"name\": \"Bobby Tables\",\n        \"contact_info\": \"bobby.t@example.com\",\n        \"source\": \"PERSONAL\",\n        \"status\": \"UNQUALIFIED\",\n        \"notes\": \"Jen noted that Bobby's company may be interested in our services.\"\n    },\n    {\n        \"id\": \"klm654\",\n        \"name\": \"Bobby Tables\",\n        \"contact_info\": \"bobby.t@example.com\",\n        \"source\": \"PERSONAL\",\n        \"status\": \"UNQUALIFIED\",\n        \"notes\": \"Jen noted that Bobby's company may be interested in our services.\"\n    }\n]"
+						},
+						{
+							"id": "1f242db0-8070-40a8-9759-19582f7a7c30",
+							"name": "Filter by account",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/leads?accountId=xyz789",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"leads"
+									],
+									"query": [
+										{
+											"key": "accountId",
+											"value": "xyz789"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "[\n    {\n        \"id\": \"klm654\",\n        \"name\": \"Bobby Tables\",\n        \"notes\": \"Jen noted that Bobby's company may be interested in our services.\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Create a new lead",
+					"id": "bc901b46-a08f-44e6-92d8-fae2b78391dc",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Bobby Tables\",\n  \"contact_info\": \"bobby.t@example.com\",\n  \"source\": \"PERSONAL\",\n  \"status\": \"UNQUALIFIED\",\n  \"notes\": \"Jen noted that Bobby's company may be interested in our services.\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/leads",
+						"description": "Create a new contact."
+					},
+					"response": [
+						{
+							"id": "d352fba5-76e9-4e31-91fe-6f31be5d2ccf",
+							"name": "Lead created successfully",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Bobby Tables\",\n    \"notes\": \"Jen noted that Bobby's company may be interested in our services.\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/leads"
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"id\": \"klm654\",\n    \"name\": \"Bobby Tables\",\n    \"contact_info\": \"bobby.t@example.com\",\n    \"source\": \"PERSONAL\",\n    \"status\": \"UNQUALIFIED\",\n    \"notes\": \"Jen noted that Bobby's company may be interested in our services.\"\n}"
+						}
+					]
+				}
+			],
+			"id": "b2d29672-212a-41b5-b27c-9b1fd43c152c",
+			"description": "A lead is a currently-unqualified person or company which may be turned into a contact, account, or opportunity.\n\nWhen converting a lead to another type, for example contact, you will need to collect additional details such as phone and email. You could do this through your application's interface and submit to the \"Create contact\" endpoint."
+		},
+		{
+			"name": "Opportunities and deals",
+			"item": [
+				{
+					"name": "Opportunity",
+					"item": [
+						{
+							"name": "Retrieve a specific opportunity",
+							"id": "8d7a1f2e-7cd7-4700-967f-8dce9748db0f",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/opportunities/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"opportunities",
+										":id"
+									],
+									"variable": [
+										{
+											"id": "9057ef3b-cbc4-4cb1-a123-a2a72736a04e",
+											"key": "id",
+											"value": "def456"
+										}
+									]
+								},
+								"description": "Get information about an opportunity."
+							},
+							"response": [
+								{
+									"id": "23be9375-c14a-4e2b-8f47-089354a9622a",
+									"name": "Successful response",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/opportunities/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"opportunities",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "def456"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"id\": \"def456\",\n    \"name\": \"New Deal\",\n    \"status\": \"QUALIFYING\",\n    \"amount\": 10000,\n    \"contact_ids\": [\n        \"abc123\"\n    ],\n    \"account_id\": \"xyz789\",\n    \"activity_ids\": [\n        \"hij321\"\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Update an existing opportunity",
+							"id": "c2ac4296-31b2-46ea-8490-9e7fb9449caf",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"New Deal\",\n  \"amount\": 10000,\n  \"status\": \"COMPLETE\",\n  \"contact_ids\": [\n    \"abc123\"\n  ],\n  \"account_id\": \"xyz789\",\n  \"activity_ids\": [\n    \"hij321\"\n  ]\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/opportunities/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"opportunities",
+										":id"
+									],
+									"variable": [
+										{
+											"id": "1e48cb34-7d1f-46ae-96dc-98d5b41283ed",
+											"key": "id",
+											"value": "def456"
+										}
+									]
+								},
+								"description": "Update an existing opportunity, for example to progress its status after a recent activity. One example shows using this to progress the deal to a \"Close\" status, which automatically adds a `close_date` property to the opportunity/deal."
+							},
+							"response": [
+								{
+									"id": "2685593a-e0a3-4dd8-9b69-0ea2d1c90268",
+									"name": "Opportunity updated",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"New Deal\",\n  \"status\": \"NEGOTIATING_DEAL\",\n  \"amount\": 10000,\n  \"contact_ids\": [\n    \"abc123\"\n  ],\n  \"account_id\": \"xyz789\",\n  \"activity_ids\": [\n    \"hij321\"\n  ]\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/opportunities/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"opportunities",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "def456"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"id\": \"def456\",\n    \"name\": \"New Deal\",\n    \"status\": \"NEGOTIATING_DEAL\",\n    \"amount\": 10000,\n    \"contact_ids\": [\n        \"abc123\"\n    ],\n    \"account_id\": \"xyz789\",\n    \"activity_ids\": [\n        \"hij321\"\n    ]\n}"
+								},
+								{
+									"id": "69c72f39-5e77-4cfa-9652-09bc102ea1f9",
+									"name": "Deal closed",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"New Deal\",\n  \"status\": \"DEAL_CLOSED\",\n  \"amount\": 10000,\n  \"contact_ids\": [\n    \"abc123\"\n  ],\n  \"account_id\": \"xyz789\",\n  \"activity_ids\": [\n    \"hij321\"\n  ]\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/opportunities/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"opportunities",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "def456"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"id\": \"def456\",\n    \"name\": \"New Deal\",\n    \"status\": \"DEAL_CLOSED\",\n    \"close_date\": \"2023-05-23\",\n    \"amount\": 10000,\n    \"contact_ids\": [\n        \"abc123\"\n    ],\n    \"account_id\": \"xyz789\",\n    \"activity_ids\": [\n        \"hij321\"\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Delete an opportunity",
+							"id": "06bcc1f7-f9d5-462a-b22d-37c1cab2f5be",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/opportunities/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"opportunities",
+										":id"
+									],
+									"variable": [
+										{
+											"id": "45403480-7b51-40a8-93d2-460e48265b48",
+											"key": "id",
+											"value": "def456"
+										}
+									]
+								},
+								"description": "Delete an existing opportunity."
+							},
+							"response": [
+								{
+									"id": "04a853aa-af13-4c8b-a78b-5963830ad7f8",
+									"name": "Opportunity deleted successfully",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/opportunities/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"opportunities",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "def456"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"id\": \"def456\",\n    \"name\": \"New Deal\"\n}"
+								}
+							]
+						}
+					],
+					"id": "07e34369-002d-46ef-86ac-21de403a4723"
+				},
+				{
+					"name": "Retrieve a list of opportunities",
+					"id": "ffeac1dd-aef4-4310-a23b-5c4a672a6f16",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": "{{baseUrl}}/opportunities",
+						"description": "Retrieve a list of opportunities, optionally filtered e.g. by associated account."
+					},
+					"response": [
+						{
+							"id": "5a63b719-4f9e-4195-8ebe-7e7d801b1813",
+							"name": "List all opportunities",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": "{{baseUrl}}/opportunities"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "[\n    {\n        \"id\": \"def456\",\n        \"name\": \"New Deal\",\n        \"status\": \"QUALIFYING\",\n        \"amount\": 10000,\n        \"contact_ids\": [\n            \"abc123\"\n        ],\n        \"account_id\": \"xyz789\",\n        \"activity_ids\": [\n            \"hij321\"\n        ]\n    },\n    {\n        \"id\": \"def456\",\n        \"name\": \"New Deal\",\n        \"status\": \"QUALIFYING\",\n        \"amount\": 10000,\n        \"contact_ids\": [\n            \"abc123\"\n        ],\n        \"account_id\": \"xyz789\",\n        \"activity_ids\": [\n            \"hij321\"\n        ]\n    }\n]"
+						},
+						{
+							"id": "22e9399e-5d00-48c7-90b7-5df9addd0eef",
+							"name": "Filtered by account",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/opportunities?accountId=xyz789",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"opportunities"
+									],
+									"query": [
+										{
+											"key": "accountId",
+											"value": "xyz789"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "[\n    {\n        \"id\": \"def456\",\n        \"name\": \"New Deal\",\n        \"status\": \"QUALIFYING\",\n        \"amount\": 10000,\n        \"contact_ids\": [\n            \"abc123\"\n        ],\n        \"account_id\": \"xyz789\",\n        \"activity_ids\": [\n            \"hij321\"\n        ]\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Create a new opportunity",
+					"id": "16d31ee5-89dd-431e-8102-e476a19c2c17",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"New Deal\",\n  \"amount\": 10000,\n  \"contact_ids\": [\n    \"abc123\"\n  ],\n  \"account_id\": \"xyz789\",\n  \"activity_ids\": [\n    \"hij321\"\n  ]\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/opportunities",
+						"description": "Create a new opportunity."
+					},
+					"response": [
+						{
+							"id": "0a1b0ad5-56d1-47d6-9983-dd0a3332ecc0",
+							"name": "Opportunity created successfully",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"New Deal\",\n  \"amount\": 10000,\n  \"contact_ids\": [\n    \"abc123\"\n  ],\n  \"account_id\": \"xyz789\",\n  \"activity_ids\": [\n    \"hij321\"\n  ]\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/opportunities"
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"id\": \"def456\",\n    \"name\": \"New Deal\",\n    \"status\": \"QUALIFYING\",\n    \"amount\": 10000,\n    \"contact_ids\": [\n        \"abc123\"\n    ],\n    \"account_id\": \"xyz789\",\n    \"activity_ids\": [\n        \"hij321\"\n    ]\n}"
+						}
+					]
+				}
+			],
+			"id": "9e29642b-750a-4f2e-aef1-41514d7742e0",
+			"description": "An opportunity is an individual business opportunity. It relates to an account, but potentially also a contact within an account."
+		},
+		{
+			"name": "Activities",
+			"item": [
+				{
+					"name": "Activity",
+					"item": [
+						{
+							"name": "Retrieve a specific activity",
+							"id": "57251a58-5310-4880-baab-f1de9fc73001",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/activities/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"activities",
+										":id"
+									],
+									"variable": [
+										{
+											"id": "9a64167e-a4bf-40cd-b426-4b59131184e3",
+											"key": "id",
+											"value": "hij321"
+										}
+									]
+								},
+								"description": "Get information about an activity."
+							},
+							"response": [
+								{
+									"id": "83bf14a4-983d-401a-b72c-947088849de7",
+									"name": "Successful response",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/activities/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"activities",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "hij321"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"id\": \"hij321\",\n    \"type\": \"MEETING\",\n    \"description\": \"Sales meeting with client\",\n    \"contact_ids\": [\n        \"abc123\"\n    ],\n    \"account_id\": \"xyz789\",\n    \"opportunity_ids\": [\n        \"def456\"\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Update an existing activity",
+							"id": "fd23e8c0-cbd8-422e-819a-5544b0d005f8",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"type\": \"Meeting\",\n  \"description\": \"Sales meeting with client\",\n  \"contact_ids\": [\n    \"abc123\"\n  ],\n  \"account_id\": \"xyz789\",\n  \"opportunity_ids\": [\n    \"def456\"\n  ]\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/activities/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"activities",
+										":id"
+									],
+									"variable": [
+										{
+											"id": "dba8832a-ba6b-416b-94dc-a7651f43d243",
+											"key": "id",
+											"value": "hij321"
+										}
+									]
+								},
+								"description": "Update an existing activity."
+							},
+							"response": [
+								{
+									"id": "bc63b1b7-9ab7-4fc0-885a-7c75600a51fc",
+									"name": "Activity updated successfully",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"type\": \"Meeting\",\n  \"description\": \"Sales meeting with client\",\n  \"contact_ids\": [\n    \"abc123\"\n  ],\n  \"account_id\": \"xyz789\",\n  \"opportunity_ids\": [\n    \"def456\"\n  ]\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/activities/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"activities",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "hij321"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"id\": \"hij321\",\n    \"type\": \"MEETING\",\n    \"description\": \"Sales meeting with client\",\n    \"contact_ids\": [\n        \"abc123\"\n    ],\n    \"account_id\": \"xyz789\",\n    \"opportunity_ids\": [\n        \"def456\"\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Delete an activity",
+							"id": "6f065588-f3ae-4771-85ac-f07f98b693cb",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/activities/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"activities",
+										":id"
+									],
+									"variable": [
+										{
+											"id": "3dfb245c-b1ba-4faa-821b-a42e97f37adb",
+											"key": "id",
+											"value": "hij321"
+										}
+									]
+								},
+								"description": "Delete an existing activity."
+							},
+							"response": [
+								{
+									"id": "876a0da8-6121-4324-af82-9d35e1b0604c",
+									"name": "Activity deleted successfully",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/activities/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"activities",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "hij321"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"id\": \"hij321\"\n}"
+								}
+							]
+						}
+					],
+					"id": "e5ec976d-4951-49ef-a3d7-33666bb62303"
+				},
+				{
+					"name": "Retrieve a list of activities",
+					"id": "6cd9b213-eef0-4778-9a78-abe63733ecc9",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": "{{baseUrl}}/activities",
+						"description": "Retrieve a list of activities, optionally filtered e.g. by type or associated account.\n\n[  \n](https://postman.postman.co/documentation/24034743-dda283f2-49f5-4754-b204-0c89a95e626c?entity=request-24034743-f0436b35-2e7d-4602-8749-98d4740d7bad&branch=&version=)"
+					},
+					"response": [
+						{
+							"id": "f6f6756e-6cfe-46ad-a8c1-3ae645496815",
+							"name": "List all activities",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": "{{baseUrl}}/activities"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "[\n    {\n        \"id\": \"hij321\",\n        \"type\": \"MEETING\",\n        \"description\": \"Sales meeting with client\",\n        \"contact_ids\": [\n            \"abc123\"\n        ],\n        \"account_id\": \"xyz789\",\n        \"opportunity_ids\": [\n            \"def456\"\n        ]\n    },\n    {\n        \"id\": \"hij321\",\n        \"type\": \"PHONE_CALL\",\n        \"description\": \"Sales meeting with client\",\n        \"contact_ids\": [\n            \"abc123\"\n        ],\n        \"account_id\": \"xyz789\",\n        \"opportunity_ids\": [\n            \"def456\"\n        ]\n    }\n]"
+						},
+						{
+							"id": "525e2bbc-5335-4ba6-9bb2-4a04274b5094",
+							"name": "Filter by account",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/activities?accountId=xyz789",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"activities"
+									],
+									"query": [
+										{
+											"key": "accountId",
+											"value": "xyz789"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "[\n    {\n        \"id\": \"hij321\",\n        \"type\": \"MEETING\",\n        \"description\": \"Sales meeting with client\",\n        \"contact_ids\": [\n            \"abc123\"\n        ],\n        \"account_id\": \"xyz789\",\n        \"opportunity_ids\": [\n            \"def456\"\n        ]\n    }\n]"
+						},
+						{
+							"id": "73b049ea-8f12-4ffe-ba3d-221e05215eec",
+							"name": "Filter by type",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/activities?type=MEETING",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"activities"
+									],
+									"query": [
+										{
+											"key": "type",
+											"value": "MEETING"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "[\n    {\n        \"id\": \"hij321\",\n        \"type\": \"MEETING\",\n        \"description\": \"Sales meeting with client\",\n        \"contact_ids\": [\n            \"abc123\"\n        ],\n        \"account_id\": \"xyz789\",\n        \"opportunity_ids\": [\n            \"def456\"\n        ]\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Create a new activity",
+					"id": "43d978c2-ce06-4c82-9401-2d8a70f80275",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"type\": \"Meeting\",\n  \"description\": \"Sales meeting with client\",\n  \"contact_ids\": [\n    \"abc123\"\n  ],\n  \"account_id\": \"xyz789\",\n  \"opportunity_ids\": [\n    \"def456\"\n  ]\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/activities",
+						"description": "Create a new activity."
+					},
+					"response": [
+						{
+							"id": "ff4b44ba-1259-429e-ac7c-2d79e99d2ddb",
+							"name": "Activity created successfully",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"type\": \"Meeting\",\n  \"description\": \"Sales meeting with client\",\n  \"contact_ids\": [\n    \"abc123\"\n  ],\n  \"account_id\": \"xyz789\",\n  \"opportunity_ids\": [\n    \"def456\"\n  ]\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/activities"
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"id\": \"hij321\",\n    \"type\": \"MEETING\",\n    \"description\": \"Sales meeting with client\",\n    \"contact_ids\": [\n        \"abc123\"\n    ],\n    \"account_id\": \"xyz789\",\n    \"opportunity_ids\": [\n        \"def456\"\n    ]\n}"
+						}
+					]
+				}
+			],
+			"id": "0f3be02a-dfc6-4ed6-8c0f-44c3c3e55d17",
+			"description": "An activity is any sales activity associated with an account, such as an in-person meeting, phone call, or email. The type of activity can be recorded, as well as more detailed notes."
+		},
+		{
+			"name": "Accounts",
+			"item": [
+				{
+					"name": "Account",
+					"item": [
+						{
+							"name": "Retrieve a specific account",
+							"id": "79b45e0d-e28b-4490-8a88-c0521fbacf36",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/accounts/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"accounts",
+										":id"
+									],
+									"variable": [
+										{
+											"id": "40e967d5-7afa-497d-b930-c3183d9d9d6c",
+											"key": "id",
+											"value": "xyz789"
+										}
+									]
+								},
+								"description": "Get information about an account."
+							},
+							"response": [
+								{
+									"id": "6b74a912-1c95-4e74-8816-83cfec7c524a",
+									"name": "Successful response",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/accounts/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"accounts",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "xyz789"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"id\": \"xyz789\",\n    \"name\": \"Acme Corp\",\n    \"industry\": \"Technology\",\n    \"contact_ids\": [\n        \"abc123\"\n    ],\n    \"opportunity_ids\": [\n        \"def456\"\n    ],\n    \"activity_ids\": [\n        \"hij321\"\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Update an existing account",
+							"id": "3e1184e9-1516-4096-b196-2ef796158454",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"Acme Corp\",\n  \"industry\": \"Technology\",\n  \"contact_ids\": [\n    \"abc123\"\n  ],\n  \"opportunity_ids\": [\n    \"def456\"\n  ],\n  \"activity_ids\": [\n    \"hij321\"\n  ]\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/accounts/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"accounts",
+										":id"
+									],
+									"variable": [
+										{
+											"id": "fef8d543-b4d6-46f0-bf9f-5938d9c89dbe",
+											"key": "id",
+											"value": "xyz789"
+										}
+									]
+								},
+								"description": "Update an existing account."
+							},
+							"response": [
+								{
+									"id": "38ae95bb-68af-4595-8322-dd917910b2a2",
+									"name": "Account updated successfully",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"Acme Corp\",\n  \"industry\": \"Technology\",\n  \"contact_ids\": [\n    \"abc123\"\n  ],\n  \"opportunity_ids\": [\n    \"def456\"\n  ],\n  \"activity_ids\": [\n    \"hij321\"\n  ]\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/accounts/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"accounts",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "xyz789"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"id\": \"xyz789\",\n    \"name\": \"Acme Corp\",\n    \"industry\": \"Technology\",\n    \"contact_ids\": [\n        \"abc123\"\n    ],\n    \"opportunity_ids\": [\n        \"def456\"\n    ],\n    \"activity_ids\": [\n        \"hij321\"\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Delete an account",
+							"id": "9a1c7866-8622-4e07-8647-5c3125752d46",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/accounts/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"accounts",
+										":id"
+									],
+									"variable": [
+										{
+											"id": "d888c7ec-c723-46b4-84e7-6e20617e5a8a",
+											"key": "id",
+											"value": "xyz789"
+										}
+									]
+								},
+								"description": "Delete an existing account."
+							},
+							"response": [
+								{
+									"id": "2697b8a1-3730-4d00-b007-89fd64de424d",
+									"name": "Account deleted successfully",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/accounts/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"accounts",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "xyz789"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"id\" :\"xyz789\",\n    \"name\": \"Acme Corp\"\n}"
+								}
+							]
+						}
+					],
+					"id": "a7dcabd0-f392-4831-baaf-fb99965afae1"
+				},
+				{
+					"name": "Retrieve a list of accounts",
+					"id": "54c12c6e-6bbc-4726-b482-0905a055f683",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": "{{baseUrl}}/accounts",
+						"description": "Retrieve a list of accounts, optionally filtered eg. by associated contacts.\n\n[  \n](https://postman.postman.co/documentation/24034743-dda283f2-49f5-4754-b204-0c89a95e626c?entity=request-24034743-ce900596-9921-4cc0-ad9b-9939f391a07a&branch=&version=)"
+					},
+					"response": [
+						{
+							"id": "3e758c13-948e-4543-9408-90147cfd6d3e",
+							"name": "List all accounts",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": "{{baseUrl}}/accounts"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "[\n    {\n        \"id\": \"xyz789\",\n        \"name\": \"Acme Corp\",\n        \"industry\": \"Technology\",\n        \"contact_ids\": [\n            \"abc123\"\n        ],\n        \"opportunity_ids\": [\n            \"def456\"\n        ],\n        \"activity_ids\": [\n            \"hij321\"\n        ]\n    },\n    {\n        \"id\": \"xyz789\",\n        \"name\": \"Acme Corp\",\n        \"industry\": \"Technology\",\n        \"contact_ids\": [\n            \"abc123\"\n        ],\n        \"opportunity_ids\": [\n            \"def456\"\n        ],\n        \"activity_ids\": [\n            \"hij321\"\n        ]\n    }\n]"
+						},
+						{
+							"id": "10194ad4-7b35-4008-abd4-3cf16e1230ed",
+							"name": "Filtered by contact",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/accounts?contactId=abc123",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"accounts"
+									],
+									"query": [
+										{
+											"key": "contactId",
+											"value": "abc123"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "[\n    {\n        \"id\": \"xyz789\",\n        \"name\": \"Acme Corp\",\n        \"industry\": \"Technology\",\n        \"contact_ids\": [\n            \"abc123\"\n        ],\n        \"opportunity_ids\": [\n            \"def456\"\n        ],\n        \"activity_ids\": [\n            \"hij321\"\n        ]\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Create a new account",
+					"id": "762eb814-3284-4471-9e87-2014ea943d66",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Acme Corp\",\n  \"industry\": \"Technology\",\n  \"contact_ids\": [\n    \"abc123\"\n  ],\n  \"opportunity_ids\": [\n    \"def456\"\n  ],\n  \"activity_ids\": [\n    \"hij321\"\n  ]\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/accounts",
+						"description": "Create a new account."
+					},
+					"response": [
+						{
+							"id": "3445575f-c90e-4dbc-9238-99bd74b18638",
+							"name": "Account created successfully",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"Acme Corp\",\n  \"industry\": \"Technology\",\n  \"contact_ids\": [\n    \"abc123\"\n  ],\n  \"opportunity_ids\": [\n    \"def456\"\n  ],\n  \"activity_ids\": [\n    \"hij321\"\n  ]\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/accounts"
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"id\": \"xyz789\",\n    \"name\": \"Acme Corp\",\n    \"industry\": \"Technology\",\n    \"contact_ids\": [\n        \"abc123\"\n    ],\n    \"opportunity_ids\": [\n        \"def456\"\n    ],\n    \"activity_ids\": [\n        \"hij321\"\n    ]\n}"
+						}
+					]
+				}
+			],
+			"id": "0ae65854-232a-4866-a164-7532d2ecc0ba",
+			"description": "Accounts are the organizations you're working with. All other data (contacts, activities, opportunities) relate back to an account."
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "150f2906-5617-44ab-80de-ecaab18bff1d",
+			"key": "baseUrl",
+			"value": "https://a89db681-7cc0-41ec-a3ac-62d949f8bbf0.mock.pstmn.io",
+			"type": "string"
+		}
+	]
+}
