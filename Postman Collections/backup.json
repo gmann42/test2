@@ -1,0 +1,228 @@
+{
+	"info": {
+		"_postman_id": "ad3a9e4b-e802-48d6-9523-d3a8b8bdbc37",
+		"name": "Mann | Test SDK",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/request",
+			"id": "a9747977-290b-4a81-a340-dd353c9c9c53",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "fb-token",
+						"value": "*****"
+					},
+					{
+						"key": "ptoken",
+						"value": "*****242"
+					},
+					{
+						"key": "drop-me",
+						"value": "hahaha"
+					},
+					{
+						"key": "redact-me",
+						"value": "noooo"
+					},
+					{
+						"key": "redact-two",
+						"value": "yesssssss"
+					},
+					{
+						"key": "drop-two",
+						"value": "noshow"
+					},
+					{
+						"key": "cache-control",
+						"value": "no-cache"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"petType\": \"{{$randomWord}}\",\n    \"sampleInteger\": {{$randomInt}},\n    \"sampleObject\": {\n        \"internalKey\": {\n            \"key2\": {},\n            \"wonderful\": \"{{$randomWord}}\"\n        },\n        \"abc\": \"{{$randomWord}}\"\n    },\n    \"sampleArray\": [\n        {{$randomInt}},\n        {{$randomInt}},\n        {{$randomInt}},\n        {{$randomInt}},\n        {{$randomInt}}\n    ],\n    \"sampleObjectArray\": [\n        {\n            \"date\": \"{{$randomWord}}\",\n            \"today\": {}\n        }\n    ],\n    \"emptyArray\": [],\n    \"null\": null,\n    \"truncatedTypeObject\": {\n        \"type\": \"{{$randomWord}}\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/request?key1=*****242",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"request"
+					],
+					"query": [
+						{
+							"key": "key1",
+							"value": "*****242"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "57336ff1-4824-4b60-9702-0bf4e4960ebf",
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "fb-token",
+								"value": "*****"
+							},
+							{
+								"key": "ptoken",
+								"value": "*****242"
+							},
+							{
+								"key": "drop-me",
+								"value": "hahaha"
+							},
+							{
+								"key": "redact-me",
+								"value": "noooo"
+							},
+							{
+								"key": "redact-two",
+								"value": "yesssssss"
+							},
+							{
+								"key": "drop-two",
+								"value": "noshow"
+							},
+							{
+								"key": "cache-control",
+								"value": "no-cache"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"petType\": \"{{$randomWord}}\",\n    \"sampleInteger\": {{$randomInt}},\n    \"sampleObject\": {\n        \"internalKey\": {\n            \"key2\": {},\n            \"wonderful\": \"{{$randomWord}}\"\n        },\n        \"abc\": \"{{$randomWord}}\"\n    },\n    \"sampleArray\": [\n        {{$randomInt}},\n        {{$randomInt}},\n        {{$randomInt}},\n        {{$randomInt}},\n        {{$randomInt}}\n    ],\n    \"sampleObjectArray\": [\n        {\n            \"date\": \"{{$randomWord}}\",\n            \"today\": {}\n        }\n    ],\n    \"emptyArray\": [],\n    \"null\": null,\n    \"truncatedTypeObject\": {\n        \"type\": \"{{$randomWord}}\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/request?key1=*****242",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"request"
+							],
+							"query": [
+								{
+									"key": "key1",
+									"value": "*****242"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "content-length",
+							"value": "1922"
+						},
+						{
+							"key": "etag",
+							"value": "W/\"782-afnhgzHexwH+xdTEweyp6OKTmww\""
+						},
+						{
+							"key": "set-cookie",
+							"value": "[\"sails.sid=s%3AikTDLQLDLn0z8NlAz1sHA-_QrMiU2aI2.DmazMjoG1f69BS7AEj6TTSCX9SvKGFkGunQP0iKdpIU; Path=/; HttpOnly\"]"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n    \"args\": {\n        \"key1\": \"{{$randomWord}}\"\n    },\n    \"data\": {\n        \"petType\": \"{{$randomWord}}\",\n        \"sampleInteger\": {{$randomInt}},\n        \"sampleObject\": {\n            \"internalKey\": {},\n            \"abc\": \"{{$randomWord}}\"\n        },\n        \"sampleArray\": [\n            {{$randomInt}},\n            {{$randomInt}},\n            {{$randomInt}},\n            {{$randomInt}},\n            {{$randomInt}}\n        ],\n        \"sampleObjectArray\": [\n            {}\n        ],\n        \"emptyArray\": [],\n        \"null\": null,\n        \"truncatedTypeObject\": {\n            \"type\": \"{{$randomWord}}\"\n        }\n    },\n    \"files\": {},\n    \"form\": {},\n    \"headers\": {\n        \"content-type\": \"{{$randomWord}}\",\n        \"fb-token\": \"{{$randomWord}}\",\n        \"ptoken\": \"{{$randomWord}}\",\n        \"drop-me\": \"{{$randomWord}}\",\n        \"redact-me\": \"{{$randomWord}}\",\n        \"redact-two\": \"{{$randomWord}}\",\n        \"drop-two\": \"{{$randomWord}}\",\n        \"user-agent\": \"{{$randomUserAgent}}\",\n        \"accept\": \"{{$randomWord}}\",\n        \"cache-control\": \"{{$randomWord}}\",\n        \"postman-token\": \"{{$randomWord}}\",\n        \"host\": \"{{$randomWord}}\",\n        \"accept-encoding\": \"{{$randomWord}}\",\n        \"connection\": \"{{$randomWord}}\",\n        \"content-length\": \"{{$randomWord}}\",\n        \"cookie\": \"{{$randomWord}}\"\n    },\n    \"json\": {\n        \"petType\": \"{{$randomWord}}\",\n        \"sampleInteger\": {{$randomInt}},\n        \"sampleObject\": {\n            \"internalKey\": {},\n            \"abc\": \"{{$randomWord}}\"\n        },\n        \"sampleArray\": [\n            {{$randomInt}},\n            {{$randomInt}},\n            {{$randomInt}},\n            {{$randomInt}},\n            {{$randomInt}}\n        ],\n        \"sampleObjectArray\": [\n            {}\n        ],\n        \"emptyArray\": [],\n        \"null\": null,\n        \"truncatedTypeObject\": {\n            \"type\": \"{{$randomWord}}\"\n        }\n    },\n    \"url\": \"{{$randomUrl}}\"\n}"
+				}
+			]
+		},
+		{
+			"name": "/books",
+			"id": "b29ca623-bb7d-4f98-879d-fcfce16d3ab0",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "cache-control",
+						"value": "no-cache"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/books?test-integration=check&integration-test=two",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"books"
+					],
+					"query": [
+						{
+							"key": "test-integration",
+							"value": "check"
+						},
+						{
+							"key": "integration-test",
+							"value": "two",
+							"type": "text"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "d980e17f-9745-4ef2-9a7b-67f3aef5e2ba",
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "cache-control",
+								"value": "no-cache"
+							}
+						],
+						"url": "{{url}}/books"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "[\n    {\n        \"author\": \"{{$randomWord}}\",\n        \"id\": \"{{$randomWord}}\",\n        \"image_path\": \"{{$randomWord}}\",\n        \"name\": \"{{$randomWord}}\",\n        \"published_at\": {\n            \"month\": \"{{$randomMonth}}\",\n            \"year\": \"{{$randomWord}}\"\n        },\n        \"publisher\": \"{{$randomWord}}\",\n        \"review\": {{$randomInt}},\n        \"submission_date\": \"{{$randomWord}}\",\n        \"tags\": [\n            \"{{$randomWord}}\",\n            \"{{$randomWord}}\",\n            \"{{$randomWord}}\"\n        ]\n    }\n]"
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"id": "07d8f550-5396-46dc-8f42-d16cf1374356",
+			"key": "url",
+			"value": "localhost:1337"
+		}
+	]
+}
